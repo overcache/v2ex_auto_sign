@@ -3,15 +3,19 @@ require "mechanize"
 require "mail"
 
 ACCOUNT = "EchoWhale"
-PASSWORD = "XBf]ke7Yt6Qmyxr"
+PASSWORD = "xxxxx"
+MAIL = "mail@qq.com"
+MAIL_PWD = "xxxx"
+TO_MAIL = "some@gmail.com"
 mail_text = ""
 success = true
+
 Mail.defaults do
   delivery_method :smtp, {
     :address => "smtp.qq.com",
     :port => "587",
-    :user_name => "mutewhale@qq.com",
-    :password => "vliybeablqbgbfcc",
+    :user_name => "#{MAIL}",
+    :password => "#{MAIL_PWD}",
     :authentication => :plain,
     :openssl_verify_mode => 'none',
     :enable_starttls_auto => true
@@ -63,8 +67,8 @@ end
 
 unless success
   mail = Mail.new do
-    from "mutewhale@qq.com"
-    to  "mutewhale@foxmail.com"
+    from "#{MAIL}"
+    to  "#{TO_MAIL}"
     subject "天啦噜！V2EX没能自动签到"
     body  (mail_text << "\n用户: #{ACCOUNT}")
   end
