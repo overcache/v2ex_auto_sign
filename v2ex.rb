@@ -27,7 +27,7 @@ agent.user_agent_alias = "Mac Safari"
 for account in ACCOUNTS
 
   user_name = account.first
-  user_pwd = acount.last
+  user_pwd = account.last
 
   begin
     mail_text = ""
