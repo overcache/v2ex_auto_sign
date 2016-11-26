@@ -5,8 +5,6 @@ require "mail"
 ACCOUNTS= [
   ["your-v2-account", "your-password-for-v2-account"],
 ]
-# ACCOUNT = "EchoWhale"
-# PASSWORD = "your-password-for-v2-account"
 MAIL = "your-qq-mail@qq.com"
 MAIL_PWD = "password-of-your-qq-mail@qq.com"
 TO_MAIL = "your-mail-for-receive-notification@gmail.com"
@@ -38,8 +36,6 @@ for account in ACCOUNTS
     login_form = page.form_with(:action => "/signin")
     login_form.field_with(:type => "text").value = user_name
     login_form.field_with(:type => "password").value = user_pwd
-    # login_form.u = ACCOUNT
-    # login_form.p = PASSWORD
     login_rsp = agent.submit(login_form)
 
     if login_rsp.uri.path == "/"
